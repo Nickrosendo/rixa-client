@@ -11,7 +11,11 @@ module.exports = {
 	transform: {
 		'^.+\\.tsx?$': 'ts-jest',
 	},
-	testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+	testPathIgnorePatterns: [
+		'<rootDir>/.next/',
+		'<rootDir>/node_modules/',
+		'<rootDir>/cypress/',
+	],
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 	collectCoverage: true,
 	collectCoverageFrom: ['**/src/**', '!**/node_modules/**', '!**/vendor/**'],
