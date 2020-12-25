@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "yarn test:unit && yarn test:e2e:headless",
     "test:unit": "NODE_ENV=test jest",
     "test:e2e:headless": "cypress run --headless",
     "cypress": "cypress open"
