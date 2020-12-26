@@ -39,10 +39,10 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.16.0",
-    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-standard": "^5.0.0",
     "husky": "^4.3.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
@@ -54,7 +54,9 @@
     "typescript": "^3.8.3"
   },
   "husky": {
-    "pre-commit": "yarn lint && yarn format",
-    "pre-push": "yarn test"
+    "hooks": {
+      "pre-commit": "yarn lint && yarn format",
+      "pre-push": "yarn test"
+    }
   }
 }
