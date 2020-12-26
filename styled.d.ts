@@ -2,18 +2,18 @@ import 'styled-components';
 
 // and extend them!
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    borderRadius: string;
-		
+	export interface DefaultTheme {
+		borderRadius: string;
+
 		backgrounds: {
 			main: string;
 			primary: string;
-      secondary: string;
-		}
+			secondary: string;
+		};
 
-    colors: {
+		colors: {
 			light: string;
 			dark: string;
-    };
-  }
+		};
+	}
 }

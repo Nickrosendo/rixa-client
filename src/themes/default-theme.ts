@@ -11,7 +11,7 @@ const defaultTheme: DefaultTheme = {
 
 	colors: {
 		light: '#fff',
-		dark: '#000'
+		dark: '#000',
 	},
 };
 

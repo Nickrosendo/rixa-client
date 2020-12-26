@@ -11,7 +11,9 @@ export default function Home() {
 			<Head>
 				<title>Rixa</title>
 			</Head>
-			<h1>Hello World</h1>
+			<h1 className="test-1 test-2 test-3 test-4 test-5 test-6" id="test">
+				Hello World
+			</h1>
 			<ThemeProvider theme={defaultTheme}>
 				<Button> teste </Button>
 			</ThemeProvider>

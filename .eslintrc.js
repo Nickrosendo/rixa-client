@@ -10,13 +10,14 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'prettier/@typescript-eslint',
 		'plugin:prettier/recommended',
+		'standard',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true,
 		},
-		ecmaVersion: 12,
+		elkcmaVersion: 12,
 		sourceType: 'module',
 	},
 	plugins: ['react', '@typescript-eslint'],
@@ -26,5 +27,10 @@ module.exports = {
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/no-explicit-any': 'off',
 		'react/react-in-jsx-scope': 'off',
+	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
 	},
 };
