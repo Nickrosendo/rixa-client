@@ -31,7 +31,9 @@ function Home(props: any) {
 				<title>Rixa</title>
 			</Head>
 			<h1>Hello World</h1>
-			<p>Logged In: {loggedIn.toString()}</p>
+			<p className="teste teste test test" id="idTest">
+				Logged In: {loggedIn.toString()}
+			</p>
 			<Button onClick={handleLogin}> login </Button>
 			<Button onClick={handleLogout}> logout </Button>
 		</>
