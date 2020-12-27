@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { defaultInitialState } from '../../../src/store';
+import { defaultInitialState } from '@root/store';
 
-import Layout from '../../../src/components/layout';
+import Layout from '@root/components/layout';
 
 describe('Test Layout component', () => {
 	it('renders children text', () => {

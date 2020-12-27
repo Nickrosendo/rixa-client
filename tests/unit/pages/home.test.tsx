@@ -5,9 +5,9 @@ import configureMockStore from 'redux-mock-store';
 import { Store } from 'redux';
 import { ThemeProvider } from 'styled-components';
 
-import Home from '../../../src/pages';
-import { defaultInitialState } from '../../../src/store';
-import { defaultTheme } from '../../../src/themes/default-theme';
+import Home from '@root/pages/home';
+import { defaultInitialState } from '@root/store';
+import { defaultTheme } from '@root/themes/default-theme';
 
 const middlewares = [];
 const mockStore = configureMockStore(middlewares);

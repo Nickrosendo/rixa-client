@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { defaultTheme } from '@root/themes/default-theme';
 import Layout from '@root/components/layout';
-import Home from '@root/pages';
+import Home from '@root/pages/home';
 import { defaultInitialState } from '@root/store';
 
 const MyApp: React.FC<AppProps> = ({ Component = Home, pageProps = {} }) => {

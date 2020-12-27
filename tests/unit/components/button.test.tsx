@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button from '../../../src/components/button';
-import { defaultTheme } from '../../../src/themes/default-theme';
+import Button from '@root/components/button';
+import { defaultTheme } from '@root/themes/default-theme';
 
 describe('Button Component', () => {
 	it('renders button component', () => {
