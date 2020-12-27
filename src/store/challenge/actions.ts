@@ -1,17 +1,19 @@
 import { Challenge, ChallengeListItem } from '../../helpers/interfaces';
 
-import { LIST_CHALLENGES, OPEN_CHALLENGE, ChallengeActionTypes } from './types'
+import { LIST_CHALLENGES, OPEN_CHALLENGE, ChallengeActionTypes } from './types';
 
-export function listChallenges(challengesList: Array<ChallengeListItem>): ChallengeActionTypes {
+export function listChallenges(
+	challengesList: Array<ChallengeListItem>,
+): ChallengeActionTypes {
 	return {
 		type: LIST_CHALLENGES,
-		payload: challengesList
-	}
+		payload: challengesList,
+	};
 }
 
 export function openChallenge(challenge: Challenge): ChallengeActionTypes {
 	return {
 		type: OPEN_CHALLENGE,
-		payload: challenge
-	}
+		payload: challenge,
+	};
 }

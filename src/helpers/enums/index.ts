@@ -1,1 +1,1 @@
-export * from './rank-enum'
+export * from './rank-enum';

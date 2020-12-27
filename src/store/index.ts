@@ -4,8 +4,8 @@ import thunk from 'redux-thunk';
 
 import { challengeReducer } from './challenge/reducers';
 import { authReducer } from './auth/reducers';
-import { AuthState } from './auth/types'
-import { ChallengeState } from './challenge/types'
+import { AuthState } from './auth/types';
+import { ChallengeState } from './challenge/types';
 
 const rootReducer = combineReducers({
 	challengeReducer,
@@ -21,8 +21,8 @@ export function initializeStore(initialState = {}) {
 }
 
 export interface DefaultInitialState {
-	challengeReducer: ChallengeState 
-	authReducer: AuthState
+	challengeReducer: ChallengeState;
+	authReducer: AuthState;
 }
 
 export const defaultInitialState: DefaultInitialState = {
