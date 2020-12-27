@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+export const Button = styled.button`
 	background: ${(props) => props.theme.backgrounds.primary};
 	border-radius: 3px;
 	border: 1px solid ${(props) => props.theme.backgrounds.primary};
