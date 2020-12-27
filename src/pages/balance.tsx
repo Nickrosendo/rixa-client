@@ -8,7 +8,7 @@ import { DefaultInitialState } from '@root/store';
 import { login, logout } from '@root/store/auth/actions';
 import { User } from '@root/helpers/interfaces';
 
-function Challenge(props: any) {
+function Balance(props: any) {
 	const { loggedIn } = props.authReducer;
 	const { login, logout } = props;
 	const mockUser: User = {
@@ -29,9 +29,9 @@ function Challenge(props: any) {
 	return (
 		<>
 			<Head>
-				<title>Rixa - Challenge</title>
+				<title>Rixa - Balance</title>
 			</Head>
-			<h1>Challenge List</h1>
+			<h1>Balance</h1>
 			<p>Logged In: {loggedIn.toString()}</p>
 			<Button onClick={handleLogin}> login </Button>
 			<Button onClick={handleLogout}> logout </Button>
@@ -47,5 +47,5 @@ const mapDispatchToProps = {
 	logout,
 };
 export default WithPrivateRoute(
-	connect(mapStateToProps, mapDispatchToProps)(Challenge),
+	connect(mapStateToProps, mapDispatchToProps)(Balance),
 );
