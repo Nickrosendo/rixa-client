@@ -4,7 +4,7 @@ module.exports = {
 	setupFiles: ['<rootDir>/jest.setup.js'],
 	globals: {
 		'ts-jest': {
-			babelConfig: true,
+			babelConfig: true
 		},
 	},
 	testRegex: TEST_REGEX,
@@ -21,5 +21,6 @@ module.exports = {
 	collectCoverageFrom: ['**/src/**', '!**/node_modules/**', '!**/vendor/**'],
 	moduleNameMapper: {
 		'\\.(scss|sass|css)$': 'identity-obj-proxy',
+		"^@root(.*)$": "<rootDir>/src$1",
 	},
 };

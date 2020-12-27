@@ -1,4 +1,4 @@
-import { User } from './index';
+import { User } from '@root/helpers/interfaces';
 
 export interface PrizeItem {
 	id: string;

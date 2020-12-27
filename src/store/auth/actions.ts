@@ -1,4 +1,4 @@
-import { User } from '../../helpers/interfaces';
+import { User } from '@root/helpers/interfaces';
 import { LOGIN, LOGOUT, AuthActionTypes } from './types';
 
 export function login(user: User): AuthActionTypes {

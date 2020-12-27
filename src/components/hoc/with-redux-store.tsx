@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import App from 'next/app';
 
-import { initializeStore, defaultInitialState } from '../../store';
+import { initializeStore, defaultInitialState } from '@root/store';
 
 export const withRedux = (PageComponent: any, { ssr = true } = {}) => {
 	const WithRedux = ({ initialReduxState = defaultInitialState, ...props }) => {

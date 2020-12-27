@@ -1,4 +1,4 @@
-import { ChallengeListItem, Challenge } from '../../helpers/interfaces';
+import { ChallengeListItem, Challenge } from '@root/helpers/interfaces';
 
 // store state
 export interface ChallengeState {

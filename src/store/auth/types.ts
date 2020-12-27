@@ -1,4 +1,4 @@
-import { User } from '../../helpers/interfaces';
+import { User } from '@root/helpers/interfaces';
 
 // store state
 export interface AuthState {

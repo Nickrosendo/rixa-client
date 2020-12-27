@@ -1,4 +1,4 @@
-import { Challenge, ChallengeListItem } from '../../helpers/interfaces';
+import { Challenge, ChallengeListItem } from '@root/helpers/interfaces';
 
 import { LIST_CHALLENGES, OPEN_CHALLENGE, ChallengeActionTypes } from './types';
 

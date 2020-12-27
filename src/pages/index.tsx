@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import { connect } from 'react-redux';
 
-import Button from '../components/button';
+import Button from '@root/components/button';
 
-import { DefaultInitialState } from '../store';
-import { login, logout } from '../store/auth/actions';
-import { User } from '../helpers/interfaces';
+import { DefaultInitialState } from '@root/store';
+import { login, logout } from '@root/store/auth/actions';
+import { User } from '@root/helpers/interfaces';
 
 function Home(props: any) {
 	const { loggedIn } = props.authReducer;
