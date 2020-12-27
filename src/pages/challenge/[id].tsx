@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { connect } from 'react-redux';
-import { useRouter } from 'next/router';
 
 import Button from '@root/components/button';
 import WithPrivateRoute from '@root/components/hoc/with-private-route';
@@ -10,8 +9,6 @@ import { login, logout } from '@root/store/auth/actions';
 import { User } from '@root/helpers/interfaces';
 
 function Challenge(props: any) {
-	const router = useRouter();
-	console.log('route query: ', router.query);
 	const { loggedIn } = props.authReducer;
 	const { login, logout } = props;
 	const mockUser: User = {

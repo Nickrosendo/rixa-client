@@ -30,7 +30,7 @@ function Terms(props: any) {
 			<Head>
 				<title>Rixa - Terms of use</title>
 			</Head>
-			<h1>Terms of use </h1>
+			<h1>Terms of use</h1>
 			<p>Logged In: {loggedIn.toString()}</p>
 			<Button onClick={handleLogin}> login </Button>
 			<Button onClick={handleLogout}> logout </Button>
