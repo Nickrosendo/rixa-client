@@ -1,22 +1,48 @@
 import Head from 'next/head';
-import { ThemeProvider } from 'styled-components';
+import { connect } from 'react-redux';
 
-import Layout from '../components/layout';
 import Button from '../components/button';
-import { defaultTheme } from '../themes/default-theme';
 
-export default function Home() {
+import { DefaultInitialState } from '../store';
+import { login, logout } from '../store/auth/actions';
+import { User } from '../helpers/interfaces';
+
+function Home(props: any) {
+	const { loggedIn } = props.authReducer;
+	const { login, logout } = props;
+	const mockUser: User = {
+		nickname: 'nickrosendo',
+		name: 'Nicolas Rosendo',
+		email: 'test@test.com',
+		creation: new Date(),
+	};
+
+	const handleLogin = () => {
+		login(mockUser);
+	};
+
+	const handleLogout = () => {
+		logout(mockUser);
+	};
+
 	return (
-		<Layout>
+		<>
 			<Head>
 				<title>Rixa</title>
 			</Head>
-			<h1 className="test-1 test-2 test-3 test-4 test-5 test-6" id="test">
-				Hello World
-			</h1>
-			<ThemeProvider theme={defaultTheme}>
-				<Button> teste </Button>
-			</ThemeProvider>
-		</Layout>
+			<h1>Hello World</h1>
+			<p>Logged In: {loggedIn.toString()}</p>
+			<Button onClick={handleLogin}> login </Button>
+			<Button onClick={handleLogout}> logout </Button>
+		</>
 	);
 }
+
+const mapStateToProps = (state: DefaultInitialState) => ({
+	authReducer: state.authReducer,
+});
+const mapDispatchToProps = {
+	login,
+	logout,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

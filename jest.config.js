@@ -17,7 +17,7 @@ module.exports = {
 		'<rootDir>/cypress/',
 	],
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-	collectCoverage: true,
+	collectCoverage: false,
 	collectCoverageFrom: ['**/src/**', '!**/node_modules/**', '!**/vendor/**'],
 	moduleNameMapper: {
 		'\\.(scss|sass|css)$': 'identity-obj-proxy',

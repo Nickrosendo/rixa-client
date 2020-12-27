@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'enzyme';
+import { mount } from 'enzyme';
 import { getPage } from 'next-page-tester';
 
 import App from '../../../src/pages/_app';
@@ -11,7 +11,7 @@ describe('Test App root', () => {
 			route: '/',
 		});
 
-		const wrapper = render(
+		const wrapper = mount(
 			<App
 				Component={Home}
 				pageProps={page.props}
