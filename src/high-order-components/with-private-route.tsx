@@ -12,7 +12,7 @@ const checkUserAuthentication = async (): Promise<boolean> => {
 	return true;
 };
 
-const WithPrivateRoute = (WrappedComponent) => {
+export const WithPrivateRoute = (WrappedComponent) => {
 	const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
 
 	hocComponent.getInitialProps = async (context) => {

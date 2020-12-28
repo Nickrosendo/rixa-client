@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { connect } from 'react-redux';
 
-import Button from '@root/components/button';
+import { Button } from '@root/components';
 
 import { DefaultInitialState } from '@root/store';
 import { login, logout } from '@root/store/auth/actions';

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { connect } from 'react-redux';
 
 import Button from '@root/components/button';
-import WithPrivateRoute from '@root/components/hoc/with-private-route';
+import { WithPrivateRoute } from '@root/high-order-components';
 
 import { DefaultInitialState } from '@root/store';
 import { login, logout } from '@root/store/auth/actions';

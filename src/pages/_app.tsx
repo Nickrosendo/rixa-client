@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
 import { defaultTheme } from '@root/themes/default-theme';
-import Layout from '@root/components/layout';
+import { Layout } from '@root/components';
 import Home from '@root/pages/home';
 import { defaultInitialState } from '@root/store';
 

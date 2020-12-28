@@ -1,7 +1,9 @@
-import { withRedux } from '@root/components/hoc/with-redux-store';
+import { withRedux } from '@root/high-order-components';
 
-function Layout({ children }: { children: React.ReactNode }) {
+function LayoutComponent({ children }: { children: React.ReactNode }) {
 	return <div>{children}</div>;
 }
 
-export default withRedux(Layout);
+export const Layout = withRedux(LayoutComponent);
+
+export default withRedux(LayoutComponent);
