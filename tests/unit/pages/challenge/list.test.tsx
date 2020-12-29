@@ -1,29 +1,22 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
-import configureMockStore from 'redux-mock-store';
-import { Store } from 'redux';
 import { ThemeProvider } from 'styled-components';
+import { ApolloProvider } from '@apollo/client';
 
 import ChallengeList from '@root/pages/challenge/list';
-import { defaultInitialState } from '@root/store';
 import { defaultTheme } from '@root/themes/default-theme';
-
-const middlewares = [];
-const mockStore = configureMockStore(middlewares);
+import { useApollo } from '@root/hooks';
 
 describe('Test Challenge List page', () => {
-	let store: Store;
-	beforeEach(() => {
-		store = mockStore(defaultInitialState);
-	});
 	it('renders children text', () => {
+		const apolloClient = useApollo({});
 		const wrapper = mount(
-			<Provider store={store}>
+			<ApolloProvider client={apolloClient}>
 				<ThemeProvider theme={defaultTheme}>
 					<ChallengeList />
 				</ThemeProvider>
-			</Provider>,
+				,
+			</ApolloProvider>,
 		);
 		expect(wrapper.find('h1').text()).toEqual('Challenge List');
 	});

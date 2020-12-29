@@ -1,0 +1,37 @@
+type User {
+  id: ID!
+	nickname: String! @search(by: [fulltext])
+  thumbUrl: String
+	name: String!
+	email: String!
+	creation: String!
+}
+
+enum Rank {
+  Bronze,
+  Silver,
+  Gold,
+  Platinum,
+  Diamond,
+  Master,
+  Challenger
+}
+
+type Prize {
+	id: ID
+	value: Int
+	creator: User
+	creationDate: String
+	challengeId: String!
+}
+
+type Challenge {
+	id: ID!
+	creator: User
+	creationDate: String
+	rank: Rank
+  title: String
+	totalPrize: Int
+	participants: [User]
+	prizeItems: [Prize]
+}

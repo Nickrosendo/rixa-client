@@ -1,51 +1,54 @@
 import Head from 'next/head';
-import { connect } from 'react-redux';
+import { useQuery } from '@apollo/client';
 
-import { Button } from '@root/components';
-import { WithPrivateRoute } from '@root/high-order-components';
+// import { WithPrivateRoute } from '@root/high-order-components';
+import { initializeApollo } from '@root/graphql';
+import { ALL_CHALLENGES_QUERY } from '@root/graphql/queries';
 
-import { DefaultInitialState } from '@root/store';
-import { login, logout } from '@root/store/auth/actions';
-import { User } from '@root/helpers/interfaces';
+function ChallengeList() {
+	const {
+		loading: loadingChallenges,
+		error: errorChallenges,
+		data: challengesQueryData,
+	} = useQuery(ALL_CHALLENGES_QUERY);
+	const challenges = challengesQueryData.queryChallenge;
 
-function ChallengeList(props: any) {
-	const { loggedIn } = props.authReducer;
-	const { login, logout } = props;
-	const mockUser: User = {
-		nickname: 'nickrosendo',
-		name: 'Nicolas Rosendo',
-		email: 'test@test.com',
-		creation: new Date(),
-	};
+	if (errorChallenges) return <div>Error loading challenges.</div>;
+	if (loadingChallenges) return <div>Loading</div>;
 
-	const handleLogin = () => {
-		login(mockUser);
-	};
-
-	const handleLogout = () => {
-		logout(mockUser);
-	};
+	console.log('challenges: ', challenges);
 
 	return (
 		<>
 			<Head>
-				<title>Rixa - Challenge List</title>
+				<title>Rixa - Challenge History</title>
 			</Head>
-			<h1>Challenge List</h1>
-			<p>Logged In: {loggedIn.toString()}</p>
-			<Button onClick={handleLogin}> login </Button>
-			<Button onClick={handleLogout}> logout </Button>
+			<h1>Challenge History</h1>
+
+			{challenges &&
+				challenges.map &&
+				challenges.map((challenge: any) => {
+					return <p key={challenge.id}> title: {challenge.title} </p>;
+				})}
 		</>
 	);
 }
 
-const mapStateToProps = (state: DefaultInitialState) => ({
-	authReducer: state.authReducer,
-});
-const mapDispatchToProps = {
-	login,
-	logout,
-};
-export default WithPrivateRoute(
-	connect(mapStateToProps, mapDispatchToProps)(ChallengeList),
-);
+export async function getServerSideProps() {
+	const apolloClient = initializeApollo();
+
+	await apolloClient.query({
+		query: ALL_CHALLENGES_QUERY,
+	});
+
+	const initialApolloState = apolloClient.cache.extract();
+	console.log('initialApolloState: ', initialApolloState);
+
+	return {
+		props: {
+			initialApolloState,
+		},
+	};
+}
+
+export default ChallengeList;
