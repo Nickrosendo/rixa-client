@@ -17,8 +17,6 @@ function ChallengeList({ cookies = '' }) {
 	if (errorChallenges) return <div>Error loading challenges.</div>;
 	if (loadingChallenges) return <div>Loading</div>;
 
-	console.log('challenges: ', challenges);
-
 	return (
 		<ThemeContainer cookies={cookies}>
 			<Head>
