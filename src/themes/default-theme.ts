@@ -1,18 +1,17 @@
-import { DefaultTheme } from 'styled-components';
+import { extendTheme } from '@chakra-ui/react';
 
-const defaultTheme: DefaultTheme = {
-	borderRadius: '8px',
-
-	backgrounds: {
-		primary: '#3C463A',
-		main: '#7D9179',
-		secondary: '#58914D',
+export const defaultTheme = extendTheme({
+	config: {
+		useSystemColorMode: false,
+		initialColorMode: 'dark',
 	},
-
 	colors: {
-		light: '#fff',
-		dark: '#000',
+		brand: {
+			50: '#BEDEB8',
+			100: '#7D9179',
+			200: '#3C463A',
+			400: '#395E32',
+			800: '#58914D',
+		},
 	},
-};
-
-export { defaultTheme };
+});
