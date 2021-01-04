@@ -2,6 +2,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { ApolloProvider } from '@apollo/client';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import { defaultTheme } from '@root/themes/default-theme';
 import { Layout } from '@root/components';
@@ -13,11 +14,13 @@ const MyApp: React.FC<AppProps> = ({ Component = Home, pageProps = {} }) => {
 
 	return (
 		<ApolloProvider client={apolloClient}>
-			<Layout>
-				<ThemeProvider theme={defaultTheme}>
-					<Component {...pageProps} />
-				</ThemeProvider>
-			</Layout>
+			<ChakraProvider>
+				<Layout>
+					<ThemeProvider theme={defaultTheme}>
+						<Component {...pageProps} />
+					</ThemeProvider>
+				</Layout>
+			</ChakraProvider>
 		</ApolloProvider>
 	);
 };
