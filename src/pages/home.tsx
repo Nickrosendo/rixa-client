@@ -2,8 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { Button, DarkMode } from '@chakra-ui/react';
 
-import { ThemeContainer } from '@root/themes';
-import { ToggleColorMode } from '@root/components';
+import { ThemeContainer, ToggleColorMode } from '@root/components';
 
 function Home({ cookies = '' }) {
 	return (
@@ -23,6 +22,12 @@ function Home({ cookies = '' }) {
 	);
 }
 
-export { getServerSideProps } from '@root/themes/theme-container';
+export async function getServerSideProps({ req }) {
+	return {
+		props: {
+			cookies: req.headers.cookie ?? '',
+		},
+	};
+}
 
 export default Home;

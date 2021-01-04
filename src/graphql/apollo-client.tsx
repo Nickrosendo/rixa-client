@@ -1,4 +1,5 @@
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
+import fetch from 'cross-fetch';
 
 let apolloClient: any;
 
@@ -7,6 +8,7 @@ function _createApolloClient() {
 		ssrMode: typeof window === 'undefined',
 		link: new HttpLink({
 			uri: 'https://quixotic-poison.us-west-2.aws.cloud.dgraph.io/graphql',
+			fetch,
 		}),
 		cache: new InMemoryCache(),
 	});

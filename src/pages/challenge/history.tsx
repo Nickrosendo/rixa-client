@@ -11,12 +11,10 @@ function ChallengeHistory() {
 		error: errorChallenges,
 		data: challengesQueryData,
 	} = useQuery(ALL_CHALLENGES_QUERY);
-	const challenges = challengesQueryData.queryChallenge;
+	const challenges = challengesQueryData?.queryChallenge;
 
 	if (errorChallenges) return <div>Error loading challenges.</div>;
 	if (loadingChallenges) return <div>Loading</div>;
-
-	console.log('challenges: ', challenges);
 
 	return (
 		<>

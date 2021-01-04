@@ -1,17 +1,35 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { ThemeProvider } from 'styled-components';
+import { shallow } from 'enzyme';
+import { MockedProvider } from '@apollo/client/testing';
 
 import ChallengeHistory from '@root/pages/challenge/history';
-import { defaultTheme } from '@root/themes/default-theme';
+import { ALL_CHALLENGES_QUERY } from '@root/graphql/queries';
 
-describe('Test Challenge History page', () => {
-	it('renders children text', () => {
-		const wrapper = mount(
-			<ThemeProvider theme={defaultTheme}>
+const mocks = [
+	{
+		request: {
+			query: ALL_CHALLENGES_QUERY,
+		},
+		result: {
+			data: {
+				queryChallenge: [
+					{
+						id: Math.random(),
+						title: 'Mocked challenge',
+					},
+				],
+			},
+		},
+	},
+];
+
+describe('Test challenge history page', () => {
+	it('renders without crashing', () => {
+		const wrapper = shallow(
+			<MockedProvider mocks={mocks} addTypename={false}>
 				<ChallengeHistory />
-			</ThemeProvider>,
+			</MockedProvider>,
 		);
-		expect(wrapper.find('h1').text()).toEqual('Challenge History');
+		expect(wrapper).toBeDefined();
 	});
 });
