@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { Container, Button, DarkMode } from '@chakra-ui/react';
+import { Container, Button } from '@chakra-ui/react';
 
-import { ThemeContainer, ToggleColorMode, HeaderMenu } from '@root/components';
+import { ThemeContainer, HeaderMenu } from '@root/components';
 
 function Home({ cookies = '' }) {
 	return (
@@ -12,14 +12,12 @@ function Home({ cookies = '' }) {
 			</Head>
 			<Container maxW="6xl" centerContent>
 				<HeaderMenu />
-				<h1>Hello World</h1>
-				<ToggleColorMode />
 
-				<DarkMode>
-					<Button isLoading={false} colorScheme="brand" color="#fff">
-						Brand Themed Button
-					</Button>
-				</DarkMode>
+				<Button isLoading={false} mt="1rem">
+					Brand Themed Button
+				</Button>
+
+				<h1>Hello World</h1>
 			</Container>
 		</ThemeContainer>
 	);

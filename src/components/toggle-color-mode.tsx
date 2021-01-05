@@ -3,7 +3,13 @@ import { Button, Icon, Tooltip } from '@chakra-ui/react';
 
 import { CgDarkMode } from 'react-icons/cg';
 
-export const ToggleColorMode: React.FC = () => {
+interface ToggleColorModeProps {
+	size?: string;
+}
+
+export const ToggleColorMode: React.FC<ToggleColorModeProps> = ({
+	size = 'md',
+}) => {
 	const toggleColorMode = () => {
 		const storageKey = 'chakra-ui-color-mode';
 		const currentCookie = document?.cookie?.match(
@@ -16,8 +22,8 @@ export const ToggleColorMode: React.FC = () => {
 	};
 
 	return (
-		<Tooltip hasArrow label="Toggle DarkMode" bg="gray.300" color="black">
-			<Button onClick={toggleColorMode}>
+		<Tooltip hasArrow label="Toggle DarkMode">
+			<Button onClick={toggleColorMode} size={size}>
 				<Icon as={CgDarkMode} />
 			</Button>
 		</Tooltip>
