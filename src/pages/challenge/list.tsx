@@ -1,12 +1,19 @@
+import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/client';
+import { NextPageContext } from 'next';
+import { Container } from '@chakra-ui/react';
 
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { initializeApollo } from '@root/graphql';
 import { ALL_CHALLENGES_QUERY } from '@root/graphql/queries';
-import { ThemeContainer } from '@root/components';
+import { ThemeContainer, HeaderMenu } from '@root/components';
 
-function ChallengeList({ cookies = '' }) {
+interface ChallengeListProps extends NextPageContext {
+	cookies?: string;
+}
+
+const ChallengeList: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
 	const {
 		loading: loadingChallenges,
 		error: errorChallenges,
@@ -22,16 +29,18 @@ function ChallengeList({ cookies = '' }) {
 			<Head>
 				<title>Rixa - Challenge History</title>
 			</Head>
-			<h1>Challenge History</h1>
+			<Container maxW="6xl" centerContent>
+				<HeaderMenu />
 
-			{challenges &&
-				challenges.map &&
-				challenges.map((challenge: any) => {
-					return <p key={challenge.id}> title: {challenge.title} </p>;
-				})}
+				{challenges &&
+					challenges.map &&
+					challenges.map((challenge: any) => {
+						return <p key={challenge.id}> title: {challenge.title} </p>;
+					})}
+			</Container>
 		</ThemeContainer>
 	);
-}
+};
 
 export async function getServerSideProps({ req }) {
 	const apolloClient = initializeApollo();

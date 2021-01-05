@@ -1,14 +1,27 @@
 import Head from 'next/head';
+import { Container } from '@chakra-ui/react';
 
-function Terms() {
+import { ThemeContainer, HeaderMenu } from '@root/components';
+
+function Terms({ cookies = '' }) {
 	return (
-		<>
+		<ThemeContainer cookies={cookies}>
 			<Head>
 				<title>Rixa - Terms of use</title>
 			</Head>
-			<h1>Terms of use</h1>
-		</>
+			<Container maxW="6xl" centerContent>
+				<HeaderMenu />
+			</Container>
+		</ThemeContainer>
 	);
+}
+
+export async function getServerSideProps({ req }) {
+	return {
+		props: {
+			cookies: req.headers.cookie ?? '',
+		},
+	};
 }
 
 export default Terms;

@@ -1,16 +1,35 @@
+import React from 'react';
 import Head from 'next/head';
+import { NextPageContext } from 'next';
+import { Container } from '@chakra-ui/react';
 
 import { WithPrivateRoute } from '@root/high-order-components';
+import { ThemeContainer, HeaderMenu } from '@root/components';
 
-function Balance() {
+interface BalanceProps extends NextPageContext {
+	cookies?: string;
+}
+
+const Balance: React.FC<BalanceProps> = ({ cookies = '' }) => {
 	return (
-		<>
+		<ThemeContainer cookies={cookies}>
 			<Head>
 				<title>Rixa - Balance</title>
 			</Head>
-			<h1>Balance</h1>
-		</>
+
+			<Container maxW="6xl" centerContent>
+				<HeaderMenu />
+			</Container>
+		</ThemeContainer>
 	);
+};
+
+export async function getServerSideProps({ req }) {
+	return {
+		props: {
+			cookies: req.headers.cookie ?? '',
+		},
+	};
 }
 
 export default WithPrivateRoute(Balance);

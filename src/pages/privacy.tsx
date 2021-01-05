@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container, Button } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
@@ -11,8 +11,6 @@ function PrivacyPolicy({ cookies = '' }) {
 			</Head>
 			<Container maxW="6xl" centerContent>
 				<HeaderMenu />
-
-				<h1>PrivacyPolicy</h1>
 			</Container>
 		</ThemeContainer>
 	);

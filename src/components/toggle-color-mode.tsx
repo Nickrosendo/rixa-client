@@ -8,7 +8,7 @@ interface ToggleColorModeProps {
 }
 
 export const ToggleColorMode: React.FC<ToggleColorModeProps> = ({
-	size = 'md',
+	size = 'sm',
 }) => {
 	const toggleColorMode = () => {
 		const storageKey = 'chakra-ui-color-mode';

@@ -26,7 +26,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = ({ drawer = false }) => {
 				<Flex align="center" justifyContent="space-between">
 					<Menu>
 						<Flex align="center">
-							<MenuButton as={Button} size="md">
+							<MenuButton as={Button} size="sm">
 								<Icon as={MdMenu} w="26px" h="26px" />
 							</MenuButton>
 							<ToggleColorMode />
