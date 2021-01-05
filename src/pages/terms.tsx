@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '@chakra-ui/react';
+import { Container, Heading, Text } from '@chakra-ui/react';
 
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
@@ -11,6 +11,8 @@ function Terms({ cookies = '' }) {
 			</Head>
 			<Container maxW="6xl" centerContent>
 				<HeaderMenu />
+				<Heading> Terms Heading </Heading>
+				<Text> Terms Text </Text>
 			</Container>
 		</ThemeContainer>
 	);
