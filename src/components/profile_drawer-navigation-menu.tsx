@@ -1,59 +1,51 @@
 import React from 'react';
+import Link from 'next/link';
 import {
 	Button,
-	Icon,
 	Drawer,
 	DrawerOverlay,
 	DrawerContent,
 	DrawerCloseButton,
 	DrawerBody,
 	Heading,
+	Avatar,
 	useDisclosure,
 } from '@chakra-ui/react';
-import { MdMenu } from 'react-icons/md';
-import Link from 'next/link';
-
-interface DrawerMenuNavigationProps {
-	size?: string;
-}
 
 interface DrawerNavigationItem {
 	label: string;
 	location: string;
 }
 
-export const DrawerMenuNavigation: React.FC<DrawerMenuNavigationProps> = ({
-	size = 'sm',
-}) => {
+export const ProfileDrawerNavigationMenu: React.FC = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-	const menuRef = React.useRef();
-
+	const avatarRef = React.useRef();
 	const drawerNavigationItems: Array<DrawerNavigationItem> = [
 		{
-			label: 'Home',
-			location: '/home',
+			label: 'Find a challenge',
+			location: '/challenge/list',
 		},
 		{
-			label: 'Terms of Use',
-			location: '/terms',
+			label: 'History of Challenges',
+			location: '/challenge/history',
 		},
 		{
-			label: 'Privacy Policy',
-			location: '/privacy',
+			label: 'Balance history',
+			location: '/balance',
 		},
 	];
 
 	return (
 		<>
-			<Button size={size} ref={menuRef} onClick={onOpen}>
-				<Icon as={MdMenu} w="26px" h="26px" />
+			<Button variant="unstyled" ref={avatarRef} onClick={onOpen}>
+				<Avatar src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4404.jpg?image=q_auto:best&v=1518361200" />
 			</Button>
 
 			<Drawer
 				isOpen={isOpen}
-				placement="left"
+				placement="right"
 				onClose={onClose}
-				finalFocusRef={menuRef}
+				finalFocusRef={avatarRef}
 			>
 				<DrawerOverlay>
 					<DrawerContent>
