@@ -6,8 +6,8 @@ context('Test App loading', () => {
 	});
 
 	describe('Check Home page', () => {
-		it('should render h1 with Hellow World text', () => {
-			cy.get('h1').should('have.text', 'Hello World');
+		it('should render body tag', () => {
+			cy.get('body').should('be.visible');
 		});
 	});
 });
