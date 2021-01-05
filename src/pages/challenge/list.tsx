@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/client';
-import { NextPageContext } from 'next';
 import { Container } from '@chakra-ui/react';
 
 // import { WithPrivateRoute } from '@root/high-order-components';
@@ -9,7 +8,7 @@ import { initializeApollo } from '@root/graphql';
 import { ALL_CHALLENGES_QUERY } from '@root/graphql/queries';
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
-interface ChallengeListProps extends NextPageContext {
+interface ChallengeListProps {
 	cookies?: string;
 }
 

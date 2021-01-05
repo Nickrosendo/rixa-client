@@ -1,11 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import { NextPageContext } from 'next';
 import { Container, Heading, Text } from '@chakra-ui/react';
 
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
-interface HomeProps extends NextPageContext {
+interface HomeProps {
 	cookies?: string;
 }
 

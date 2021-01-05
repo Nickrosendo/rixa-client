@@ -14,6 +14,8 @@ import {
 	Button,
 	RixaEmblem,
 	Heading,
+	Tooltip,
+	Drawer,
 } from '@root/themes/default-theme/components';
 
 export const defaultTheme = extendTheme({
@@ -24,5 +26,7 @@ export const defaultTheme = extendTheme({
 		Button,
 		RixaEmblem,
 		Heading,
+		Tooltip,
+		Drawer,
 	},
 });

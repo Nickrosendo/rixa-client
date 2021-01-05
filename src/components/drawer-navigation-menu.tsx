@@ -59,7 +59,7 @@ export const DrawerMenuNavigation: React.FC<DrawerMenuNavigationProps> = ({
 					<DrawerContent>
 						<DrawerCloseButton />
 
-						<DrawerBody bg="brand.200">
+						<DrawerBody>
 							{drawerNavigationItems &&
 								drawerNavigationItems.map((item: DrawerNavigationItem) => (
 									<Link href={item.location} key={item.location}>

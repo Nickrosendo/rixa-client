@@ -1,12 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import { NextPageContext } from 'next';
 import { Container } from '@chakra-ui/react';
 
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
-interface ChallengeRoomProps extends NextPageContext {
+interface ChallengeRoomProps {
 	cookies?: string;
 }
 
