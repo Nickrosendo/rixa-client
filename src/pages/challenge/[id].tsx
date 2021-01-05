@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { NextPageContext } from 'next';
 import { Container } from '@chakra-ui/react';
 
-import { WithPrivateRoute } from '@root/high-order-components';
+// import { WithPrivateRoute } from '@root/high-order-components';
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
 interface ChallengeRoomProps extends NextPageContext {
@@ -31,4 +31,4 @@ export async function getServerSideProps({ req }) {
 	};
 }
 
-export default WithPrivateRoute(ChallengeRoom);
+export default ChallengeRoom;
