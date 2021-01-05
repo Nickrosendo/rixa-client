@@ -10,7 +10,11 @@ import { styles } from '@root/themes/default-theme/styles.theme';
 import { colors } from '@root/themes/default-theme/colors.theme';
 
 // Components overrides
-import { Button, RixaEmblem } from '@root/themes/default-theme/components';
+import {
+	Button,
+	RixaEmblem,
+	Heading,
+} from '@root/themes/default-theme/components';
 
 export const defaultTheme = extendTheme({
 	config,
@@ -19,5 +23,6 @@ export const defaultTheme = extendTheme({
 	components: {
 		Button,
 		RixaEmblem,
+		Heading,
 	},
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { NextPageContext } from 'next';
-import { Container } from '@chakra-ui/react';
+import { Container, Heading, Text } from '@chakra-ui/react';
 
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
@@ -17,6 +17,9 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 			</Head>
 			<Container maxW="6xl" centerContent>
 				<HeaderMenu />
+
+				<Heading> Home Heading </Heading>
+				<Text> Home Text </Text>
 			</Container>
 		</ThemeContainer>
 	);

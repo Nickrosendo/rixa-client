@@ -1,9 +1,9 @@
 export const Button = {
-	baseStyle: ({ colorMode }) => ({
+	baseStyle: {
 		fontWeight: 'bold',
 		textTransform: 'uppercase',
 		borderRadius: '8px',
-	}),
+	},
 	variants: {
 		brand: ({ colorMode }) => ({
 			bg: colorMode === 'dark' ? 'white' : 'brand.200',
