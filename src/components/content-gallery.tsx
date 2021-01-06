@@ -24,7 +24,13 @@ export const ContentGallery: React.FC<ContentGalleryProps> = ({
 	const { isDragging } = useScrollBox(scrollRef);
 
 	return (
-		<Flex align="left" direction="column" minW="100%" position="relative">
+		<Flex
+			align="left"
+			direction="column"
+			minW="100%"
+			position="relative"
+			my="4"
+		>
 			{title && <Heading mb=".5rem"> {title} </Heading>}
 			<Box
 				whiteSpace="nowrap"
@@ -32,7 +38,6 @@ export const ContentGallery: React.FC<ContentGalleryProps> = ({
 				overflowY="hidden"
 				w="100%"
 				h="250px"
-				position="absolute"
 				top="1.5rem"
 				boxShadow="dark-lg"
 				pointerEvents={isDragging ? 'none' : undefined}
