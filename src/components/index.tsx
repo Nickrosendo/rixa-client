@@ -6,3 +6,4 @@ export * from './drawer-navigation-menu';
 export * from './header-menu_left-group';
 export * from './header-menu_right-group';
 export * from './profile_drawer-navigation-menu';
+export * from './content-gallery';
