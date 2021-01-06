@@ -86,9 +86,7 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 					alignItems="center"
 					flexDir="column"
 				>
-					<Heading>
-						Bem Vindo ao Rixa, uma nova forma de jogar seus jogos.
-					</Heading>
+					<Heading>Bem Vindo ao Rixa, uma nova forma de jogar.</Heading>
 					<Button bg="brand.200" color="white" mt="2">
 						Saiba mais
 					</Button>

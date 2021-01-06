@@ -14,7 +14,7 @@ import {
 
 interface DrawerNavigationItem {
 	label: string;
-	location: string;
+	location?: string;
 }
 
 export const ProfileDrawerNavigationMenu: React.FC = () => {
@@ -32,6 +32,17 @@ export const ProfileDrawerNavigationMenu: React.FC = () => {
 		{
 			label: 'Balance history',
 			location: '/balance',
+		},
+		{
+			label: 'Profile',
+			location: '/profile',
+		},
+		{
+			label: 'Security',
+			location: '/security',
+		},
+		{
+			label: 'Logout',
 		},
 	];
 
@@ -57,11 +68,26 @@ export const ProfileDrawerNavigationMenu: React.FC = () => {
 						<DrawerBody>
 							{drawerNavigationItems &&
 								drawerNavigationItems.map((item: DrawerNavigationItem) => (
-									<Link href={item.location} key={item.location}>
-										<Heading cursor="pointer" _hover={{ color: 'gray.900' }}>
-											{item.label}
-										</Heading>
-									</Link>
+									<>
+										{item.location ? (
+											<Link href={item.location} key={item.location}>
+												<Heading
+													cursor="pointer"
+													_hover={{ color: 'gray.900' }}
+												>
+													{item.label}
+												</Heading>
+											</Link>
+										) : (
+											<Heading
+												cursor="pointer"
+												_hover={{ color: 'gray.900' }}
+												key={item.location}
+											>
+												{item.label}
+											</Heading>
+										)}
+									</>
 								))}
 						</DrawerBody>
 					</DrawerContent>

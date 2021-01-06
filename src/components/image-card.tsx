@@ -37,7 +37,7 @@ export const ImageCard: React.FC<ImageCardProps> = ({
 				display="flex"
 				alignItems="center"
 			>
-				<Heading>{title}</Heading>
+				<Heading color="white">{title}</Heading>
 			</Box>
 		</Box>
 	);
