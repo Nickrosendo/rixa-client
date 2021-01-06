@@ -6,14 +6,14 @@ export const Button = {
 	},
 	variants: {
 		brand: ({ colorMode }) => ({
-			bg: colorMode === 'dark' ? 'white' : 'brand.200',
-			color: colorMode === 'dark' ? 'brand.200' : 'white',
-			borderColor: colorMode === 'dark' ? 'brand.200' : 'white',
+			bg: colorMode === 'dark' ? 'transparent' : 'brand.200',
+			color: colorMode === 'dark' ? 'white' : 'white',
+			borderColor: colorMode === 'dark' ? 'white' : 'white',
 			borderWidth: '1px',
 			_hover: {
-				bg: colorMode === 'dark' ? 'brand.200' : 'white',
-				color: colorMode === 'dark' ? 'white' : 'brand.200',
-				borderColor: colorMode === 'dark' ? 'white' : 'brand.200',
+				bg: colorMode === 'dark' ? 'white' : 'white',
+				color: colorMode === 'dark' ? 'brand.200' : 'brand.200',
+				borderColor: colorMode === 'dark' ? 'brand.200' : 'brand.200',
 			},
 		}),
 	},

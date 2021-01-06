@@ -45,7 +45,7 @@ export const DrawerMenuNavigation: React.FC<DrawerMenuNavigationProps> = ({
 
 	return (
 		<>
-			<Button size={size} ref={menuRef} onClick={onOpen}>
+			<Button size={size} ref={menuRef} onClick={onOpen} mr="1">
 				<Icon as={MdMenu} w="26px" h="26px" />
 			</Button>
 

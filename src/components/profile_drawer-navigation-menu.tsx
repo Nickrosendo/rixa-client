@@ -38,7 +38,10 @@ export const ProfileDrawerNavigationMenu: React.FC = () => {
 	return (
 		<>
 			<Button variant="unstyled" ref={avatarRef} onClick={onOpen}>
-				<Avatar src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4404.jpg?image=q_auto:best&v=1518361200" />
+				<Avatar
+					boxShadow="dark-lg"
+					src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4404.jpg?image=q_auto:best&v=1518361200"
+				/>
 			</Button>
 
 			<Drawer

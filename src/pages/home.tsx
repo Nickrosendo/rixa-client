@@ -2,13 +2,15 @@ import React from 'react';
 import Head from 'next/head';
 import { Container, Heading, Text } from '@chakra-ui/react';
 
-import { ThemeContainer, HeaderMenu } from '@root/components';
+import { ThemeContainer, HeaderMenu, ContentGallery } from '@root/components';
 
 interface HomeProps {
 	cookies?: string;
 }
 
 const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
+	const partnersSteams = [];
+
 	return (
 		<ThemeContainer cookies={cookies}>
 			<Head>
@@ -19,6 +21,10 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 
 				<Heading> Home Heading </Heading>
 				<Text> Home Text </Text>
+
+				{partnersSteams && partnersSteams.length > 0 && (
+					<ContentGallery items={partnersSteams} title="Partners Streams" />
+				)}
 			</Container>
 		</ThemeContainer>
 	);
