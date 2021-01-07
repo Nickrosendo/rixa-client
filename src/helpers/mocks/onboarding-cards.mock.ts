@@ -5,7 +5,7 @@ export const MockOnboardingCards: Array<ImageCardProps> = [
 		imageSrc:
 			'https://cdn.dribbble.com/users/788099/screenshots/3248866/karate_guy_kit8-net.png?compress=1&resize=800x600',
 		title:
-			'Encontre oponentes para desafiar dentro do jogo e ganhe ranking com suas vitorias.',
+			'Encontre oponentes para desafiar dentro do jogo e ganhe recompensas ao chegar no topo',
 	},
 	{
 		imageSrc:

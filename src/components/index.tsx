@@ -11,3 +11,5 @@ export * from './image-card';
 export * from './image-card-group';
 export * from './rank-list-item';
 export * from './rank-list';
+export * from './footer';
+export * from './copyright';

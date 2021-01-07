@@ -10,6 +10,7 @@ import {
 	ContentGallery,
 	ImageCardGroup,
 	RankList,
+	Footer,
 } from '@root/components';
 
 import {
@@ -62,6 +63,7 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 				<Icon as={MdArrowDownward} w={50} h={50} />
 
 				<RankList list={rankList} title="Rank de players" />
+				<Footer />
 			</Container>
 		</ThemeContainer>
 	);

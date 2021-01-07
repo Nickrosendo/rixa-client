@@ -5,11 +5,13 @@ import Link from 'next/link';
 interface RixaEmblemProps {
 	width?: string;
 	height?: string;
+	position?: 'absolute' | 'relative';
 }
 
 export const RixaEmblem: React.FC<RixaEmblemProps> = ({
 	width = '78px',
 	height = '78px',
+	position = 'absolute',
 }) => {
 	const styles = useStyleConfig('RixaEmblem');
 
@@ -19,7 +21,7 @@ export const RixaEmblem: React.FC<RixaEmblemProps> = ({
 			h={height}
 			w={width}
 			top=".5rem"
-			position="absolute"
+			position={position}
 			sx={styles}
 		>
 			<Link href="/home">
