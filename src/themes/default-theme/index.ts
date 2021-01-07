@@ -16,6 +16,7 @@ import {
 	Heading,
 	Tooltip,
 	Drawer,
+	Modal,
 } from '@root/themes/default-theme/components';
 
 export const defaultTheme = extendTheme({
@@ -28,5 +29,6 @@ export const defaultTheme = extendTheme({
 		Heading,
 		Tooltip,
 		Drawer,
+		Modal,
 	},
 });

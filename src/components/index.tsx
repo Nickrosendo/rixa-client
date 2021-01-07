@@ -14,3 +14,4 @@ export * from './rank-list';
 export * from './footer';
 export * from './copyright';
 export * from './custom-box';
+export * from './auth-modal';

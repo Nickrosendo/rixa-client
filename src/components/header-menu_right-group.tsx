@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonGroup, Button, Divider } from '@chakra-ui/react';
 
-import { ProfileDrawerNavigationMenu } from '@root/components';
+import { ProfileDrawerNavigationMenu, AuthModal } from '@root/components';
 
 interface HeaderMenuRightGroupProps {
 	size?: string;
@@ -10,15 +10,29 @@ interface HeaderMenuRightGroupProps {
 
 export const HeaderMenuRightGroup: React.FC<HeaderMenuRightGroupProps> = ({
 	size = 'sm',
-	auth = true,
+	auth = false,
 }) => {
+	const [isOpenAuthModal, setIsOpenAuthModal] = React.useState(false);
+	const handleCloseAuthModal = () => {
+		setIsOpenAuthModal(false);
+	};
+	const handleOpenAuthModal = () => {
+		setIsOpenAuthModal(true);
+	};
+
 	return auth ? (
 		<ProfileDrawerNavigationMenu />
 	) : (
 		<ButtonGroup isAttached size={size}>
-			<Button mr="-px">Signup</Button>
+			<Button mr="-px" onClick={handleOpenAuthModal}>
+				Signup
+			</Button>
 			<Divider orientation="vertical" w="1" />
-			<Button mr="-px">Login</Button>
+			<Button mr="-px" onClick={handleOpenAuthModal}>
+				Login
+			</Button>
+
+			<AuthModal isOpen={isOpenAuthModal} onClose={handleCloseAuthModal} />
 		</ButtonGroup>
 	);
 };
