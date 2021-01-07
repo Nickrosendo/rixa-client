@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flex, Box, Image, Text } from '@chakra-ui/react';
 
+import { CustomBox } from '@root/components';
 import { User } from '@root/helpers/interfaces';
 
 export interface RankListItemProps {
@@ -23,15 +24,9 @@ export const RankListItem: React.FC<RankListItemProps> = ({
 				mx="3"
 				borderRadius="100%"
 			/>
-			<Box
-				bg="brand.200"
-				border="1px solid #fff"
-				p="2"
-				borderRadius="8px"
-				w="100%"
-			>
+			<CustomBox p="2" borderRadius="8px" w="100%">
 				<Text> {user.nickname} </Text>{' '}
-			</Box>
+			</CustomBox>
 		</Flex>
 	);
 };

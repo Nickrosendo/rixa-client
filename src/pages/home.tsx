@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Container, Heading, Box, Button, Icon } from '@chakra-ui/react';
+import { Container, Heading, Button, Icon } from '@chakra-ui/react';
 
 import { MdArrowDownward } from 'react-icons/md';
 
@@ -11,6 +11,7 @@ import {
 	ImageCardGroup,
 	RankList,
 	Footer,
+	CustomBox,
 } from '@root/components';
 
 import {
@@ -36,10 +37,8 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 			<Container maxW="6xl" centerContent>
 				<HeaderMenu />
 
-				<Box
-					bg="white"
+				<CustomBox
 					p="2"
-					color="brand.200"
 					borderRadius="8px"
 					display="flex"
 					alignItems="center"
@@ -49,7 +48,7 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 					<Button bg="brand.200" color="white" mt="2">
 						Saiba mais
 					</Button>
-				</Box>
+				</CustomBox>
 
 				{partnersSteams && partnersSteams.length > 0 && (
 					<ContentGallery

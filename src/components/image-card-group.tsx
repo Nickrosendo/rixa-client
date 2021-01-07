@@ -15,7 +15,14 @@ export const ImageCardGroup: React.FC<ImageCardGroupProps> = ({
 	width = '100%',
 }) => {
 	return (
-		<Flex align="center" justifyContent="center" w={width} my="3" h={height}>
+		<Flex
+			flexDir={{ base: 'column', md: 'row' }}
+			align="center"
+			justifyContent="center"
+			w={width}
+			my="3"
+			minH={height}
+		>
 			{cards &&
 				cards.map((card: ImageCardProps) => (
 					<React.Fragment key={card.imageSrc}>

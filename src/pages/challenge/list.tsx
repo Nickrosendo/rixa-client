@@ -26,7 +26,7 @@ const ChallengeList: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
 	return (
 		<ThemeContainer cookies={cookies}>
 			<Head>
-				<title>Rixa - Challenge History</title>
+				<title>Rixa - Challenge List</title>
 			</Head>
 			<Container maxW="6xl" centerContent>
 				<HeaderMenu />

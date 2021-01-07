@@ -50,7 +50,6 @@ export async function getServerSideProps({ req }) {
 	});
 
 	const initialApolloState = apolloClient.cache.extract();
-	console.log('initialApolloState: ', initialApolloState);
 
 	return {
 		props: {
