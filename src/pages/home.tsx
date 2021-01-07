@@ -8,66 +8,24 @@ import {
 	ThemeContainer,
 	HeaderMenu,
 	ContentGallery,
-	ImageCardProps,
 	ImageCardGroup,
+	RankList,
 } from '@root/components';
+
+import {
+	MockRankList,
+	MockPartnersStreams,
+	MockOnboardingCards,
+} from '@root/helpers/mocks';
 
 interface HomeProps {
 	cookies?: string;
 }
 
 const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
-	const partnersSteams = [
-		{
-			id: Math.random().toString(),
-			imageSrc:
-				'https://static-cdn.jtvnw.net/previews-ttv/live_user_gaules-440x248.jpg',
-			imageAlt: 'test',
-		},
-		{
-			id: Math.random().toString(),
-			imageSrc:
-				'https://static-cdn.jtvnw.net/previews-ttv/live_user_yoda-440x248.jpg',
-			imageAlt: 'test',
-		},
-		{
-			id: Math.random().toString(),
-			imageSrc:
-				'https://static-cdn.jtvnw.net/previews-ttv/live_user_gaules-440x248.jpg',
-			imageAlt: 'test',
-		},
-		{
-			id: Math.random().toString(),
-			imageSrc:
-				'https://static-cdn.jtvnw.net/previews-ttv/live_user_yoda-440x248.jpg',
-			imageAlt: 'test',
-		},
-		{
-			id: Math.random().toString(),
-			imageSrc:
-				'https://static-cdn.jtvnw.net/previews-ttv/live_user_gaules-440x248.jpg',
-			imageAlt: 'test',
-		},
-		{
-			id: Math.random().toString(),
-			imageSrc:
-				'https://static-cdn.jtvnw.net/previews-ttv/live_user_yoda-440x248.jpg',
-			imageAlt: 'test',
-		},
-	];
-	const onboardingCards: Array<ImageCardProps> = [
-		{
-			imageSrc:
-				'https://cdn.dribbble.com/users/788099/screenshots/3248866/karate_guy_kit8-net.png?compress=1&resize=800x600',
-			title:
-				'Encontre oponentes para desafiar dentro do jogo e ganhe ranking com suas vitorias.',
-		},
-		{
-			imageSrc:
-				'https://cdn.dribbble.com/users/175710/screenshots/14512908/media/c178af39f8902d7e6f75bd9c98f247dc.png?compress=1&resize=800x600',
-			title: 'Conecte sua conta e desafie seus amigos dentro do jogo.',
-		},
-	];
+	const partnersSteams = MockPartnersStreams;
+	const onboardingCards = MockOnboardingCards;
+	const rankList = MockRankList;
 
 	return (
 		<ThemeContainer cookies={cookies}>
@@ -102,6 +60,8 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 				<ImageCardGroup cards={onboardingCards} width="100%" height="400px" />
 
 				<Icon as={MdArrowDownward} w={50} h={50} />
+
+				<RankList list={rankList} title="Rank de players" />
 			</Container>
 		</ThemeContainer>
 	);

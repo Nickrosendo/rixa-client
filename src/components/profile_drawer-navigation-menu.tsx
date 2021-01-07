@@ -67,28 +67,23 @@ export const ProfileDrawerNavigationMenu: React.FC = () => {
 
 						<DrawerBody>
 							{drawerNavigationItems &&
-								drawerNavigationItems.map((item: DrawerNavigationItem) => (
-									<>
-										{item.location ? (
-											<Link href={item.location} key={item.location}>
-												<Heading
-													cursor="pointer"
-													_hover={{ color: 'gray.900' }}
-												>
-													{item.label}
-												</Heading>
-											</Link>
-										) : (
-											<Heading
-												cursor="pointer"
-												_hover={{ color: 'gray.900' }}
-												key={item.location}
-											>
+								drawerNavigationItems.map((item: DrawerNavigationItem) =>
+									item.location ? (
+										<Link href={item.location} key={Math.random().toString()}>
+											<Heading cursor="pointer" _hover={{ color: 'gray.900' }}>
 												{item.label}
 											</Heading>
-										)}
-									</>
-								))}
+										</Link>
+									) : (
+										<Heading
+											cursor="pointer"
+											_hover={{ color: 'gray.900' }}
+											key={Math.random().toString()}
+										>
+											{item.label}
+										</Heading>
+									),
+								)}
 						</DrawerBody>
 					</DrawerContent>
 				</DrawerOverlay>
