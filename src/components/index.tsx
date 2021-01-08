@@ -15,3 +15,6 @@ export * from './footer';
 export * from './copyright';
 export * from './custom-box';
 export * from './auth-modal';
+export * from './login-form';
+export * from './signup-form';
+export * from './auth-button-group';
