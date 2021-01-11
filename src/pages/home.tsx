@@ -6,11 +6,10 @@ import { MdArrowDownward } from 'react-icons/md';
 
 import {
 	ThemeContainer,
-	HeaderMenu,
+	MainLayout,
 	ContentGallery,
 	ImageCardGroup,
 	RankList,
-	Footer,
 	CustomBox,
 } from '@root/components';
 
@@ -34,9 +33,7 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 			<Head>
 				<title>Rixa</title>
 			</Head>
-			<Container maxW="6xl" centerContent>
-				<HeaderMenu />
-
+			<MainLayout>
 				<CustomBox
 					p="2"
 					borderRadius="8px"
@@ -62,8 +59,7 @@ const Home: React.FC<HomeProps> = ({ cookies = '' }) => {
 				<Icon as={MdArrowDownward} w={50} h={50} />
 
 				<RankList list={rankList} title="Rank de players" />
-				<Footer />
-			</Container>
+			</MainLayout>
 		</ThemeContainer>
 	);
 };

@@ -1,9 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { Container } from '@chakra-ui/react';
 
 // import { WithPrivateRoute } from '@root/high-order-components';
-import { ThemeContainer, HeaderMenu } from '@root/components';
+import { ThemeContainer, MainLayout } from '@root/components';
 
 interface BalanceProps {
 	cookies?: string;
@@ -16,9 +15,7 @@ const Balance: React.FC<BalanceProps> = ({ cookies = '' }) => {
 				<title>Rixa - Balance</title>
 			</Head>
 
-			<Container maxW="6xl" centerContent>
-				<HeaderMenu />
-			</Container>
+			<MainLayout>Foo</MainLayout>
 		</ThemeContainer>
 	);
 };
