@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import { Container } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 
-import { ThemeContainer, HeaderMenu } from '@root/components';
+import { ThemeContainer, MainLayout } from '@root/components';
 
 interface SecurityProps {
 	cookies?: string;
@@ -14,9 +14,10 @@ const Security: React.FC<SecurityProps> = ({ cookies = '' }) => {
 			<Head>
 				<title>Rixa - Security</title>
 			</Head>
-			<Container maxW="6xl" centerContent>
-				<HeaderMenu />
-			</Container>
+			<MainLayout>
+				<Heading> Security Heading </Heading>
+				<Text> Security Text </Text>
+			</MainLayout>
 		</ThemeContainer>
 	);
 };
