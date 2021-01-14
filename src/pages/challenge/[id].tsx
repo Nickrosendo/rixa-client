@@ -11,15 +11,12 @@ import { GET_CHALLENGE_BY_ID } from '@root/graphql/queries';
 interface ChallengeRoomProps {
 	cookies?: string;
 	challengeRoomId?: string;
-	initialApolloState: any;
 }
 
 const ChallengeRoom: React.FC<ChallengeRoomProps> = ({
 	cookies = '',
 	challengeRoomId = '',
-	initialApolloState = undefined,
 }) => {
-	console.log('initialApolloState: ', initialApolloState);
 	const {
 		loading: loadingChallengeQuery,
 		error: errorChallengeQuery,

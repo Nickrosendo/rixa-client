@@ -3,16 +3,16 @@ import { shallow } from 'enzyme';
 import { MockedProvider } from '@apollo/client/testing';
 
 import ChallengeHistory from '@root/pages/challenge/history';
-import { ALL_CHALLENGES_QUERY } from '@root/graphql/queries';
+import { GET_CHALLENGES_BY_CREATOR_ID } from '@root/graphql/queries';
 
 const mocks = [
 	{
 		request: {
-			query: ALL_CHALLENGES_QUERY,
+			query: GET_CHALLENGES_BY_CREATOR_ID,
 		},
 		result: {
 			data: {
-				queryChallenge: [
+				getChallengesByCreatorId: [
 					{
 						id: Math.random(),
 						title: 'Mocked challenge',
