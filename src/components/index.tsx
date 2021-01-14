@@ -20,3 +20,5 @@ export * from './signup-form';
 export * from './auth-button-group';
 export * from './main-layout';
 export * from './challenge-list-item';
+export * from './challenge-list';
+export * from './rank-emblem';

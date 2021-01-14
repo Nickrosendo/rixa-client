@@ -5,23 +5,19 @@ import { useQuery } from '@apollo/client';
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { initializeApollo } from '@root/graphql';
 import { GET_ALL_CHALLENGES } from '@root/graphql/queries';
-import {
-	ThemeContainer,
-	MainLayout,
-	ChallengeListItem,
-} from '@root/components';
+import { ThemeContainer, MainLayout, ChallengeList } from '@root/components';
 
 interface ChallengeListProps {
 	cookies?: string;
 }
 
-const ChallengeList: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
+const ChallengeListPage: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
 	const {
 		loading: loadingChallenges,
 		error: errorChallenges,
 		data: challengesQueryData,
 	} = useQuery(GET_ALL_CHALLENGES);
-	const challenges = challengesQueryData?.getAllChallenges;
+	const challenges = challengesQueryData?.getAllChallenges || [];
 
 	if (errorChallenges) return <div>Error loading challenges.</div>;
 	if (loadingChallenges) return <div>Loading</div>;
@@ -32,11 +28,7 @@ const ChallengeList: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
 				<title>Rixa - Challenge List</title>
 			</Head>
 			<MainLayout>
-				{challenges &&
-					challenges.map &&
-					challenges.map((challenge: any) => {
-						return <ChallengeListItem item={challenge} key={challenge.id} />;
-					})}
+				<ChallengeList challenges={challenges} />
 			</MainLayout>
 		</ThemeContainer>
 	);
@@ -59,4 +51,4 @@ export async function getServerSideProps({ req }) {
 	};
 }
 
-export default ChallengeList;
+export default ChallengeListPage;

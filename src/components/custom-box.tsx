@@ -6,7 +6,7 @@ export interface CustomBoxProps extends BoxProps {
 	darkBg?: string;
 	lightColor?: string;
 	darkColor?: string;
-	inverted?: boolean;
+	inverted?: 'true' | 'false';
 }
 
 export const CustomBox: React.FC<CustomBoxProps> = (props: any) => {
@@ -15,16 +15,16 @@ export const CustomBox: React.FC<CustomBoxProps> = (props: any) => {
 		darkBg = 'white',
 		lightColor = 'white',
 		darkColor = 'brand.200',
-		inverted = false,
+		inverted = 'false',
 	} = props;
 
 	const bg = useColorModeValue(
-		inverted ? darkBg : lightBg,
-		inverted ? lightBg : darkBg,
+		inverted === 'true' ? darkBg : lightBg,
+		inverted === 'true' ? lightBg : darkBg,
 	);
 	const color = useColorModeValue(
-		inverted ? darkColor : lightColor,
-		inverted ? lightColor : darkColor,
+		inverted === 'true' ? darkColor : lightColor,
+		inverted === 'true' ? lightColor : darkColor,
 	);
 
 	return (

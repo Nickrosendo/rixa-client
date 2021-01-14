@@ -5,20 +5,20 @@ import { useQuery } from '@apollo/client';
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { initializeApollo } from '@root/graphql';
 import { GET_CHALLENGES_BY_CREATOR_ID } from '@root/graphql/queries';
-import { ThemeContainer, MainLayout } from '@root/components';
+import { ThemeContainer, MainLayout, ChallengeList } from '@root/components';
 
-interface ChallengeHistoryProps {
+interface ChallengeHistoryPageProps {
 	cookies?: string;
 }
 
-const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
+const ChallengeHistoryPage: React.FC<ChallengeHistoryPageProps> = ({
 	cookies = '',
 }) => {
 	const {
 		loading: loadingChallenges,
 		error: errorChallenges,
 		data: challengesQueryData,
-	} = useQuery(GET_CHALLENGES_BY_CREATOR_ID, { variables: { creatorId: '2' } });
+	} = useQuery(GET_CHALLENGES_BY_CREATOR_ID, { variables: { creatorId: '1' } });
 	const challenges = challengesQueryData?.getChallengesByCreatorId;
 
 	if (errorChallenges) return <div>Error loading challenges.</div>;
@@ -30,11 +30,7 @@ const ChallengeHistory: React.FC<ChallengeHistoryProps> = ({
 				<title>Rixa - Challenge History</title>
 			</Head>
 			<MainLayout>
-				{challenges &&
-					challenges.map &&
-					challenges.map((challenge: any) => {
-						return <p key={challenge.id}> title: {challenge.title} </p>;
-					})}
+				<ChallengeList challenges={challenges} />
 			</MainLayout>
 		</ThemeContainer>
 	);
@@ -45,7 +41,7 @@ export async function getServerSideProps({ req }) {
 	try {
 		await apolloClient.query({
 			query: GET_CHALLENGES_BY_CREATOR_ID,
-			variables: { creatorId: '2' },
+			variables: { creatorId: '1' },
 		});
 	} catch (err) {
 		if (err) {
@@ -63,4 +59,4 @@ export async function getServerSideProps({ req }) {
 	};
 }
 
-export default ChallengeHistory;
+export default ChallengeHistoryPage;

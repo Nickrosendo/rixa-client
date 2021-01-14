@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Text, Icon, Flex } from '@chakra-ui/react';
 import { ImCoinYen } from 'react-icons/im';
 
-import { CustomBox } from '@root/components';
+import { CustomBox, RankEmblem } from '@root/components';
 import { Challenge } from '@root/helpers/interfaces';
 
 export interface ChallengeListItemProps {
@@ -33,11 +33,11 @@ export const ChallengeListItem: React.FC<ChallengeListItemProps> = ({
 				<Text> {item.title} </Text>
 			</Flex>
 			<Flex alignItems="center">
-				<Text> {item.rank} </Text>
+				<RankEmblem rank={item.rank} width="40px" height="40px" />
 				<CustomBox
 					p="2"
 					borderRadius="8px"
-					inverted={true}
+					inverted="true"
 					display="flex"
 					alignItems="center"
 				>
