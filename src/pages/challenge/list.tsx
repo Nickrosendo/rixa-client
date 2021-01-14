@@ -5,7 +5,7 @@ import { Container } from '@chakra-ui/react';
 
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { initializeApollo } from '@root/graphql';
-import { ALL_CHALLENGES_QUERY } from '@root/graphql/queries';
+import { GET_ALL_CHALLENGES } from '@root/graphql/queries';
 import { ThemeContainer, HeaderMenu } from '@root/components';
 
 interface ChallengeListProps {
@@ -17,8 +17,8 @@ const ChallengeList: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
 		loading: loadingChallenges,
 		error: errorChallenges,
 		data: challengesQueryData,
-	} = useQuery(ALL_CHALLENGES_QUERY);
-	const challenges = challengesQueryData.queryChallenge;
+	} = useQuery(GET_ALL_CHALLENGES);
+	const challenges = challengesQueryData?.getAllChallenges;
 
 	if (errorChallenges) return <div>Error loading challenges.</div>;
 	if (loadingChallenges) return <div>Loading</div>;
@@ -45,7 +45,7 @@ export async function getServerSideProps({ req }) {
 	const apolloClient = initializeApollo();
 
 	await apolloClient.query({
-		query: ALL_CHALLENGES_QUERY,
+		query: GET_ALL_CHALLENGES,
 	});
 
 	const initialApolloState = apolloClient.cache.extract();

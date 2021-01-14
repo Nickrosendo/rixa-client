@@ -8,7 +8,7 @@ interface HeaderMenuRightGroupProps {
 }
 
 export const HeaderMenuRightGroup: React.FC<HeaderMenuRightGroupProps> = ({
-	auth = false,
+	auth = true,
 }) => {
 	return auth ? <ProfileDrawerNavigationMenu /> : <AuthButtonGroup />;
 };
