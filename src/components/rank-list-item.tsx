@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Image, Text } from '@chakra-ui/react';
+import { Flex, Image, Text } from '@chakra-ui/react';
 
 import { CustomBox } from '@root/components';
 import { User } from '@root/helpers/interfaces';

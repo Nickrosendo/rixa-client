@@ -19,3 +19,4 @@ export * from './login-form';
 export * from './signup-form';
 export * from './auth-button-group';
 export * from './main-layout';
+export * from './challenge-list-item';

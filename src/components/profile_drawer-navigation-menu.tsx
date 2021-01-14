@@ -71,7 +71,7 @@ export const ProfileDrawerNavigationMenu: React.FC = () => {
 					display="flex"
 					alignItems="center"
 				>
-					<Icon as={ImCoinYen} mr="md" />
+					<Icon as={ImCoinYen} mr="2" />
 					<Text fontSize="16px">1500</Text>
 				</CustomBox>
 				<Avatar

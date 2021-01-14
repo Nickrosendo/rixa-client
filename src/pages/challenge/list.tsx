@@ -5,7 +5,11 @@ import { useQuery } from '@apollo/client';
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { initializeApollo } from '@root/graphql';
 import { GET_ALL_CHALLENGES } from '@root/graphql/queries';
-import { ThemeContainer, MainLayout } from '@root/components';
+import {
+	ThemeContainer,
+	MainLayout,
+	ChallengeListItem,
+} from '@root/components';
 
 interface ChallengeListProps {
 	cookies?: string;
@@ -31,7 +35,7 @@ const ChallengeList: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
 				{challenges &&
 					challenges.map &&
 					challenges.map((challenge: any) => {
-						return <p key={challenge.id}> title: {challenge.title} </p>;
+						return <ChallengeListItem item={challenge} key={challenge.id} />;
 					})}
 			</MainLayout>
 		</ThemeContainer>
