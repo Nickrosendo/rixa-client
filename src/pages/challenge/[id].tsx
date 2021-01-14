@@ -4,7 +4,7 @@ import { Container, Heading, Text } from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 
 // import { WithPrivateRoute } from '@root/high-order-components';
-import { ThemeContainer, HeaderMenu } from '@root/components';
+import { ThemeContainer, MainLayout } from '@root/components';
 import { initializeApollo } from '@root/graphql';
 import { GET_CHALLENGE_BY_ID } from '@root/graphql/queries';
 
@@ -37,20 +37,20 @@ const ChallengeRoom: React.FC<ChallengeRoomProps> = ({
 			<Head>
 				<title>Rixa - Challenge</title>
 			</Head>
-			<Container maxW="6xl" centerContent>
-				<HeaderMenu />
+			<MainLayout>
+				<Heading> Challenge Room Heading </Heading>
+				<Text> Challenge Room text</Text>
 
 				{challengeRoom && <Heading> {challengeRoom.creator.nickname} </Heading>}
 
 				{challengeRoom && <Text> Total: {challengeRoom.totalPrize} </Text>}
-			</Container>
+			</MainLayout>
 		</ThemeContainer>
 	);
 };
 
 export async function getServerSideProps({ req, query }) {
 	const { id: challengeRoomId } = query;
-	console.log('challengeRoomIdQueryParam: ', challengeRoomId);
 	const apolloClient = initializeApollo();
 	await apolloClient.query({
 		query: GET_CHALLENGE_BY_ID,

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Container, Heading, Text } from '@chakra-ui/react';
 
-import { ThemeContainer, HeaderMenu } from '@root/components';
+import { ThemeContainer, MainLayout } from '@root/components';
 
 function PrivacyPolicy({ cookies = '' }) {
 	return (
@@ -9,11 +9,10 @@ function PrivacyPolicy({ cookies = '' }) {
 			<Head>
 				<title>Rixa - PrivacyPolicy</title>
 			</Head>
-			<Container maxW="6xl" centerContent>
-				<HeaderMenu />
+			<MainLayout>
 				<Heading> PrivacyPolicy Heading </Heading>
 				<Text> PrivacyPolicy Text </Text>
-			</Container>
+			</MainLayout>
 		</ThemeContainer>
 	);
 }

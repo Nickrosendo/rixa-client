@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 
+import { Heading, Text } from '@chakra-ui/react';
+
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { ThemeContainer, MainLayout } from '@root/components';
 
@@ -15,7 +17,10 @@ const Balance: React.FC<BalanceProps> = ({ cookies = '' }) => {
 				<title>Rixa - Balance</title>
 			</Head>
 
-			<MainLayout>Foo</MainLayout>
+			<MainLayout>
+				<Heading> Balance Heading </Heading>
+				<Text> Balance Text </Text>
+			</MainLayout>
 		</ThemeContainer>
 	);
 };

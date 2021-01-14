@@ -1,12 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/client';
-import { Container } from '@chakra-ui/react';
 
 // import { WithPrivateRoute } from '@root/high-order-components';
 import { initializeApollo } from '@root/graphql';
 import { GET_ALL_CHALLENGES } from '@root/graphql/queries';
-import { ThemeContainer, HeaderMenu } from '@root/components';
+import { ThemeContainer, MainLayout } from '@root/components';
 
 interface ChallengeListProps {
 	cookies?: string;
@@ -28,15 +27,13 @@ const ChallengeList: React.FC<ChallengeListProps> = ({ cookies = '' }) => {
 			<Head>
 				<title>Rixa - Challenge List</title>
 			</Head>
-			<Container maxW="6xl" centerContent>
-				<HeaderMenu />
-
+			<MainLayout>
 				{challenges &&
 					challenges.map &&
 					challenges.map((challenge: any) => {
 						return <p key={challenge.id}> title: {challenge.title} </p>;
 					})}
-			</Container>
+			</MainLayout>
 		</ThemeContainer>
 	);
 };
