@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container, Heading, Text } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 
 import { ThemeContainer, MainLayout } from '@root/components';
 
