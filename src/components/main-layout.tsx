@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '@chakra-ui/react';
+import { Container, Box } from '@chakra-ui/react';
 
 import { HeaderMenu, Footer } from '@root/components';
 
@@ -14,9 +14,16 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
 	children = {},
 }) => {
 	return (
-		<Container maxW="6xl" centerContent>
+		<Container
+			minH="100vh"
+			maxW="6xl"
+			centerContent
+			justifyContent="space-between"
+		>
 			{showHeader && <HeaderMenu />}
-			{children}
+			<Box flex="1" w="100%" textAlign="center">
+				{children}
+			</Box>
 			{showFooter && <Footer />}
 		</Container>
 	);
