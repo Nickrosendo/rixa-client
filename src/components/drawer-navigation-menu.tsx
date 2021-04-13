@@ -10,7 +10,7 @@ import {
 	Heading,
 	useDisclosure,
 } from '@chakra-ui/react';
-import { MdMenu } from 'react-icons/md';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
 
 interface DrawerMenuNavigationProps {
@@ -46,7 +46,7 @@ export const DrawerMenuNavigation: React.FC<DrawerMenuNavigationProps> = ({
 	return (
 		<>
 			<Button size={size} ref={menuRef} onClick={onOpen} mr="1">
-				<Icon as={MdMenu} w="26px" h="26px" />
+				<Icon as={GiHamburgerMenu} w="21px" h="21px" />
 			</Button>
 
 			<Drawer
